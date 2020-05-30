@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MazeGoal : MonoBehaviour, IDropHandler
+public class Ipoint : MonoBehaviour, IPointerClickHandler
 {
-   
-    public void OnDrop(PointerEventData eventData)
-    {
-        var pillPoint = 0;
-        Debug.Log("GOOOALLLL");
-        pillPoint++;
 
-        if(pillPoint == 2)
-        {
-            Debug.Log("u did it!");
-        }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+
     }
     // Start is called before the first frame update
     void Start()
