@@ -16,7 +16,7 @@ public class SppechWin : MonoBehaviour
     {
         if (L_Bubble.locked && M_Bubble.locked && R_Bubble.locked)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("PillMaze");
         }
     }
 }

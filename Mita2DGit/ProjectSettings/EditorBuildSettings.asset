@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day1_P3.unity
     guid: f57f997ec1048854dbe5f22dec0162b4
+  - enabled: 1
+    path: Assets/Scenes/SpeechGame.unity
+    guid: 8e3505732fca1d9409083569fcec95e6
+  - enabled: 1
+    path: Assets/Scenes/PillMaze.unity
+    guid: 8aace09e3ea81f5499e25db189eacf86
   m_configObjects: {}

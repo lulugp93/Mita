@@ -32,7 +32,7 @@ public class WakeMe : MonoBehaviour
         if (Clicks == 3)
         {
             Bubble2.SetActive(false);
-            SceneManager.LoadScene("Day1_P3");
+            SceneManager.LoadScene("SpeechGame");
         }
     }
 

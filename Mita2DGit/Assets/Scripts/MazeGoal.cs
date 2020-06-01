@@ -9,7 +9,7 @@ public class MazeGoal : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         var pillPoint = 0;
-        Debug.Log("GOOOALLLL");
+        Debug.Log("1 pill has reached the goal ");
         pillPoint++;
 
         if(pillPoint == 2)
