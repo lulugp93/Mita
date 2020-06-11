@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc248b69125e9e545aec449751e7ab0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorArrow: {fileID: 2800000, guid: 6d1b24f67fc4ec14ab6cdb78989b9461, type: 3}
+  cursorArrow: {fileID: 2800000, guid: bb2e7df84034a0d468280d8b0e1c1c1c, type: 3}
 --- !u!4 &96687304
 Transform:
   m_ObjectHideFlags: 0
