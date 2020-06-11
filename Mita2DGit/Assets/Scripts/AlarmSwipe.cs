@@ -32,6 +32,7 @@ public class AlarmSwipe : MonoBehaviour
 
             if (x2 > x1)
             {
+                Destroy(Phone);
                 SceneManager.LoadScene("Day1_P2");
             }
         }

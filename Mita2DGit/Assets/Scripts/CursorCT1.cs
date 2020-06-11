@@ -9,7 +9,7 @@ public class CursorCT1 : MonoBehaviour
     void Start()
     {
         // Cursor.visible = false;
-        Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursorArrow, new Vector2(10, 10), CursorMode.ForceSoftware);
     }
 
    
