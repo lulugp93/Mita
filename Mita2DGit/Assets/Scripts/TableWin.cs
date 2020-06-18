@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SppechWin : MonoBehaviour
+public class TableWin : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,9 @@ public class SppechWin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (L_Bubble.locked && M_Bubble.locked && R_Bubble.locked && L_Bottom.locked && M_Bottom.locked && R_Bottom.locked)
-        {
-            SceneManager.LoadScene("PillMaze");
-        }
+       // if (RealCup.locked && TableOOP.locked)
+       // {
+       //     SceneManager.LoadScene("PillMaze");
+        //}
     }
 }

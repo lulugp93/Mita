@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day1_P4.unity
     guid: 76ca1ce0a7349e442932f067c39fe5df
+  - enabled: 1
+    path: Assets/Scenes/Prompt.unity
+    guid: 83eb08f3f044d8f48b93154d4914acfe
   m_configObjects: {}
