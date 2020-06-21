@@ -15,6 +15,8 @@ public class TableSetter : MonoBehaviour
     public GameObject TableOut;
     public GameObject FakeCup;
     public GameObject realCup;
+    public GameObject TableShadow;
+    public GameObject Flashback;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class TableSetter : MonoBehaviour
         {
             deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+            TableShadow.SetActive(true);
         }
     }
 
@@ -41,6 +44,7 @@ public class TableSetter : MonoBehaviour
 
     private void OnMouseUp()
     {
+        TableShadow.SetActive(false);
         if (Mathf.Abs(transform.position.x - sbubMID.position.x) <=0.5f &&
             Mathf.Abs(transform.position.y - sbubMID.position.y) <= 0.5f)
         {
@@ -50,6 +54,7 @@ public class TableSetter : MonoBehaviour
            TableOut.SetActive(false);
             FakeCup.SetActive(false);
             realCup.SetActive(true);
+            Flashback.SetActive(false);
             
         }
         else

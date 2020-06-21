@@ -10,12 +10,27 @@ public class NewCupButton : MonoBehaviour
     public GameObject FakeCup;
     public GameObject RealCup;
     public GameObject Feedback;
+    public GameObject Aura;
 
+    void Start()
+    {
+        Aura.SetActive(false);
+    }
 
-   public void WRONG()
+    public void OnMouseOver()
+    {
+        Aura.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        Aura.SetActive(false);
+    }
+
+    public void WRONG()
     {
         Feedback.SetActive(true);
-        timer = 3f;
+        timer = 2f;
     }
     void Update()
     {

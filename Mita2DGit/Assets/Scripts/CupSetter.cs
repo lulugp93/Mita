@@ -15,6 +15,7 @@ public class CupSetter : MonoBehaviour
  
     public GameObject CupOOP;
     public GameObject CupIP;
+    public GameObject Shadow;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class CupSetter : MonoBehaviour
         {
             deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+            Shadow.SetActive(true);
         }
     }
 
@@ -41,6 +43,7 @@ public class CupSetter : MonoBehaviour
 
     private void OnMouseUp()
     {
+        Shadow.SetActive(false);
         if (Mathf.Abs(transform.position.x - sbubMID.position.x) <=0.5f &&
             Mathf.Abs(transform.position.y - sbubMID.position.y) <= 0.5f)
         {

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WakeMe : MonoBehaviour
 {
+    private float timer = 0f;
     int Clicks = 0;
     public GameObject Bubble1;
     public GameObject Bubble2;
@@ -26,6 +27,7 @@ public class WakeMe : MonoBehaviour
             Bubble1.SetActive(true);
             Pose1.SetActive(false);
             Pose2.SetActive(true);
+            timer = 1f;
         }
 
         if (Clicks == 2)
@@ -34,6 +36,9 @@ public class WakeMe : MonoBehaviour
             Bubble2.SetActive(true);
             Pose2.SetActive(false);
             Pose3.SetActive(true);
+            Bubble1.SetActive(false);
+            timer = 1f;
+
         }
 
         if (Clicks == 3)
@@ -53,7 +58,13 @@ public class WakeMe : MonoBehaviour
 
     public void Update()
     {
-       
+        timer -= Time.deltaTime;
+        
+        if (timer <= 0)
+        {
+            Bubble1.SetActive(false);
+            Bubble2.SetActive(false);
+        }
     }
     
   
