@@ -45,7 +45,7 @@ public class WakeMe : MonoBehaviour
         {
             Bubble2.SetActive(false);
             Pose3.SetActive(false);
-            SceneManager.LoadScene("Day1_P4");
+            SceneManager.LoadScene("Day1_P3");
         }
     }
 

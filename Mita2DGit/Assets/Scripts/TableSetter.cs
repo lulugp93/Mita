@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TableSetter : MonoBehaviour
+public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler
 {
     [SerializeField]
    
@@ -17,12 +18,28 @@ public class TableSetter : MonoBehaviour
     public GameObject realCup;
     public GameObject TableShadow;
     public GameObject Flashback;
+    public AudioSource myFx;
+    public AudioClip hoverfx;
+    public AudioClip Clickfx;
+
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        myFx.PlayOneShot(hoverfx);
+    }
+    private void OnMouseEnter()
+    {
+        myFx.PlayOneShot(hoverfx);
+    }
     private void OnMouseDown()
     {
         if (!locked)
@@ -30,6 +47,7 @@ public class TableSetter : MonoBehaviour
             deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
             TableShadow.SetActive(true);
+            myFx.PlayOneShot(Clickfx);
         }
     }
 

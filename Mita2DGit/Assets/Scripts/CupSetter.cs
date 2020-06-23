@@ -16,10 +16,18 @@ public class CupSetter : MonoBehaviour
     public GameObject CupOOP;
     public GameObject CupIP;
     public GameObject Shadow;
+    public AudioSource myFx;
+    public AudioClip hoverfx;
+    public AudioClip Clickfx;
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
+    }
+
+    private void OnMouseEnter()
+    {
+        myFx.PlayOneShot(hoverfx);
     }
 
     private void OnMouseDown()
@@ -29,6 +37,7 @@ public class CupSetter : MonoBehaviour
             deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
             Shadow.SetActive(true);
+            myFx.PlayOneShot(Clickfx);
         }
     }
 
