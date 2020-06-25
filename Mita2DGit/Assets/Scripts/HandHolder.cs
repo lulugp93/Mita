@@ -21,12 +21,15 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        myAnimationController.enabled = true;
-        myAnimationController.SetBool("MoveRoom", true);
-        pointerDown = true;
-        HandisHeld.SetActive(true);
-        HandnotHeld.SetActive(false);
-        Debug.Log("OnPointerDown");
+        if (!PauseMenu.IsPause)
+        {
+            myAnimationController.enabled = true;
+            myAnimationController.SetBool("MoveRoom", true);
+            pointerDown = true;
+            HandisHeld.SetActive(true);
+            HandnotHeld.SetActive(false);
+            Debug.Log("OnPointerDown");
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

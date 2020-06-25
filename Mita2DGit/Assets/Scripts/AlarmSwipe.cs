@@ -30,7 +30,7 @@ public class AlarmSwipe : MonoBehaviour
         {
             x2 = Input.mousePosition.x;
 
-            if (x2 > x1)
+            if (x2 > x1 && !PauseMenu.IsPause)
             {
                 Destroy(Phone);
                 SceneManager.LoadScene("Day1_P2");

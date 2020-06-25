@@ -12,7 +12,7 @@ public class CupSetter : MonoBehaviour
     private Vector2 mousePosition;
     private float deltaX, deltaY;
     public static bool locked;
- 
+    private bool IsMouseDown;
     public GameObject CupOOP;
     public GameObject CupIP;
     public GameObject Shadow;
@@ -23,11 +23,15 @@ public class CupSetter : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
+        IsMouseDown = false;
     }
 
     private void OnMouseEnter()
     {
-        myFx.PlayOneShot(hoverfx);
+        if (!IsMouseDown)
+        {
+            myFx.PlayOneShot(hoverfx);
+        }
     }
 
     private void OnMouseDown()
@@ -38,6 +42,7 @@ public class CupSetter : MonoBehaviour
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
             Shadow.SetActive(true);
             myFx.PlayOneShot(Clickfx);
+            IsMouseDown = true;
         }
     }
 
@@ -69,6 +74,8 @@ public class CupSetter : MonoBehaviour
         {
             transform.position = new Vector2(initialPosition.x, initialPosition.y);
         }
+
+        IsMouseDown = false;
     }
 
     // Update is called once per frame

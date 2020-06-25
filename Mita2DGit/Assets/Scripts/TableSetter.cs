@@ -12,6 +12,7 @@ public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     private Vector2 mousePosition;
     private float deltaX, deltaY;
     public static bool locked;
+    private bool IsMouseDown;
     public GameObject TableinPlace;
     public GameObject TableOut;
     public GameObject FakeCup;
@@ -21,11 +22,13 @@ public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     public AudioSource myFx;
     public AudioClip hoverfx;
     public AudioClip Clickfx;
+    public AudioClip Snapfx;
 
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
+        IsMouseDown = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -34,26 +37,33 @@ public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        myFx.PlayOneShot(hoverfx);
+        if (!PauseMenu.IsPause)
+        {
+            myFx.PlayOneShot(hoverfx);
+        }
     }
     private void OnMouseEnter()
     {
-        myFx.PlayOneShot(hoverfx);
+        if (!IsMouseDown && !PauseMenu.IsPause)
+        {
+            myFx.PlayOneShot(hoverfx);
+        }
     }
     private void OnMouseDown()
     {
-        if (!locked)
+        if (!locked && !PauseMenu.IsPause)
         {
             deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
             deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
             TableShadow.SetActive(true);
             myFx.PlayOneShot(Clickfx);
+            IsMouseDown = true;
         }
     }
 
     private void OnMouseDrag()
     {
-        if (!locked)
+        if (!locked && !PauseMenu.IsPause)
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY);
@@ -73,12 +83,14 @@ public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
             FakeCup.SetActive(false);
             realCup.SetActive(true);
             Flashback.SetActive(false);
-            
+            myFx.PlayOneShot(Snapfx);
+
         }
         else
         {
             transform.position = new Vector2(initialPosition.x, initialPosition.y);
         }
+        IsMouseDown = false;
     }
 
     // Update is called once per frame

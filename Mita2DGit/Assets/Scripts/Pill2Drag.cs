@@ -8,6 +8,32 @@ public class Pill2Drag : MonoBehaviour,  IPointerClickHandler,  IPointerDownHand
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private bool IsMouseDown;
+    public AudioSource myFx;
+    public AudioClip hoverfx;
+    public AudioClip Clickfx;
+
+    private void OnMouseEnter()
+    {
+        if (!IsMouseDown && !PauseMenu.IsPause)
+        {
+            myFx.PlayOneShot(hoverfx);
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (!PauseMenu.IsPause)
+        {
+            myFx.PlayOneShot(Clickfx);
+            IsMouseDown = true;
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        IsMouseDown = false;
+    }
 
     private void Awake()
     {

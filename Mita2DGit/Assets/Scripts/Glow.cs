@@ -12,7 +12,10 @@ public class Glow : MonoBehaviour
 
     public void OnMouseOver()
     {
-        Aura.SetActive(true);
+        if (!PauseMenu.IsPause)
+        {
+            Aura.SetActive(true);
+        }
     }
 
     public void OnMouseExit()
