@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prompt.unity
     guid: 83eb08f3f044d8f48b93154d4914acfe
+  - enabled: 1
+    path: Assets/Scenes/MitaWakePOV.unity
+    guid: 81108973f35c789499611b99a3997854
   m_configObjects: {}
