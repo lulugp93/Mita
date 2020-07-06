@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pill1
   - Pill
+  - Case1
+  - Case2
+  - Case3
   layers:
   - Default
   - TransparentFX

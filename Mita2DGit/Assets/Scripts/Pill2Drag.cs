@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Pill2Drag : MonoBehaviour,  IPointerClickHandler,  IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
+public class Pill2Drag : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+{
 
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Vector2 initialPosition;
     private bool IsMouseDown;
     public AudioSource myFx;
     public AudioClip hoverfx;
     public AudioClip Clickfx;
+    //public AudioClip Snapfx;
+
+    void Start()
+    {
+        initialPosition = transform.position;
+        IsMouseDown = false;
+    }
 
     private void OnMouseEnter()
     {
@@ -28,12 +37,14 @@ public class Pill2Drag : MonoBehaviour,  IPointerClickHandler,  IPointerDownHand
             myFx.PlayOneShot(Clickfx);
             IsMouseDown = true;
         }
+
     }
 
     private void OnMouseUp()
     {
         IsMouseDown = false;
     }
+
 
     private void Awake()
     {
@@ -44,7 +55,7 @@ public class Pill2Drag : MonoBehaviour,  IPointerClickHandler,  IPointerDownHand
     public void OnPointerClick(PointerEventData eventData)
     {
 
-    }  
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -64,9 +75,20 @@ public class Pill2Drag : MonoBehaviour,  IPointerClickHandler,  IPointerDownHand
         canvasGroup.blocksRaycasts = true;
     }
 
- public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         //Debug.Log("Click Click");
     }
-   
+
+    void Update()
+    {
+        if (MazeColliderReset.PillIsTouched)
+        {
+            Debug.Log("Pill2 You Touched it!");
+            transform.position = new Vector2(initialPosition.x, initialPosition.y);
+            MazeColliderReset.PillIsTouched = false;
+        }
+    }
+
 }
+
