@@ -9,6 +9,7 @@ public class AlarmSwipe : MonoBehaviour
 {
 
     public GameObject Phone;
+    public static bool IsWin = false;
     public float x1;
     public float x2;
 
@@ -32,8 +33,9 @@ public class AlarmSwipe : MonoBehaviour
 
             if (x2 > x1 && !PauseMenu.IsPause)
             {
-                Destroy(Phone);
-                SceneManager.LoadScene("Day1_P2");
+                //Destroy(Phone);
+                //SceneManager.LoadScene("Day1_P2");
+                IsWin = true;
             }
         }
     }

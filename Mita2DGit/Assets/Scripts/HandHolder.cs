@@ -12,7 +12,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float requiredHoldTime;
     public GameObject HandisHeld;
     public GameObject HandnotHeld;
-   
+    public static bool IsWin = false;
+    public GameObject HandButton;
 
     [SerializeField] private Animator myAnimationController;
    
@@ -53,7 +54,11 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             pointerDownTimer += Time.deltaTime;
             if(pointerDownTimer >= requiredHoldTime)
             {
-                SceneManager.LoadScene("Day1_P4");
+                
+                myAnimationController.enabled = false;
+                HandButton.SetActive(false);
+                IsWin = true;
+               // SceneManager.LoadScene("Day1_P4");
                 // Debug.Log("Change Scene Nao PLS");
 
             }

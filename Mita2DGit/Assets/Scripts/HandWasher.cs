@@ -7,9 +7,12 @@ using UnityEngine.SceneManagement;
 public class HandWasher : MonoBehaviour
 {
     public bool InZone;
+    //private bool Entered;
     private float WashTimer;
     public float RequiredTime;
     public Image BubbleBar;
+    public AudioSource myFx;
+    public AudioClip Faucet;
     //float MaxBubble = 3f;
 
     // Start is called before the first frame update
@@ -21,12 +24,15 @@ public class HandWasher : MonoBehaviour
     public void OnMouseOver()
     {
         InZone = true;
+       // Entered = true;
+        myFx.PlayOneShot(Faucet);
         Debug.Log("Ur in da zone!");
     }
 
     public void OnMouseExit()
     {
         InZone = false;
+        myFx.Pause();
         Debug.Log("Ur Out of da zone!");
     }
 
@@ -36,7 +42,7 @@ public class HandWasher : MonoBehaviour
         Debug.Log(WashTimer);
         if (InZone)
         {
-
+           
             WashTimer += Time.deltaTime;
             if (WashTimer >= RequiredTime)
             {
@@ -48,6 +54,7 @@ public class HandWasher : MonoBehaviour
         if (!InZone)
         {
 
+           
             WashTimer -= Time.deltaTime;
             if (WashTimer <= 0)
             {

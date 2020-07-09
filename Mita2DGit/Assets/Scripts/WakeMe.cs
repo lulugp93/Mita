@@ -12,6 +12,7 @@ public class WakeMe : MonoBehaviour
     public GameObject Pose1;
     public GameObject Pose2;
     public GameObject Pose3;
+    public static bool IsWin = false;
 
     public void Sleepyhead()
     {
@@ -44,8 +45,10 @@ public class WakeMe : MonoBehaviour
         if (Clicks == 3)
         {
             Bubble2.SetActive(false);
-            Pose3.SetActive(false);
-            SceneManager.LoadScene("Day1_P3");
+            //Pose3.SetActive(false);
+            IsWin = true;
+            //SceneManager.LoadScene("Day1_P3");
+
         }
     }
 
