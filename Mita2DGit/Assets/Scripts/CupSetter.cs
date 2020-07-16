@@ -19,6 +19,7 @@ public class CupSetter : MonoBehaviour
     public AudioSource myFx;
     public AudioClip hoverfx;
     public AudioClip Clickfx;
+    public static bool IsWin = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +66,8 @@ public class CupSetter : MonoBehaviour
             locked = true;
             CupIP.SetActive(true);
            CupOOP.SetActive(false);
-            SceneManager.LoadScene("SpeechGame");
+            //SceneManager.LoadScene("SpeechGame");
+            IsWin = true;
             //cuptimer = 2f;
 
 

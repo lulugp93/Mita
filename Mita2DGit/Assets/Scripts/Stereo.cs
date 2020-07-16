@@ -14,6 +14,7 @@ public class Stereo : MonoBehaviour
     public AudioClip Song1;
     public AudioClip Song2;
     public AudioClip Song3;
+    public static bool IsWin = false;
     private static bool Disc1In = false;
     private static bool Disc2In = false;
     private static bool Disc3In = false;
@@ -68,6 +69,7 @@ public class Stereo : MonoBehaviour
             Debug.Log("Song 2 is Playing");
             NeutralFace.SetActive(false);
             HappyFace.SetActive(true);
+            IsWin = true;
         }
         if (Disc3In)
         {

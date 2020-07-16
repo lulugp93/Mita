@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NewMazeGoal : MonoBehaviour
 {
     public int PillPoint;
+    public static bool IsWin = false;
     [SerializeField] ParticleSystem DigestParticle = null;
     [SerializeField] ParticleSystem DigestParticle2 = null;
     // Start is called before the first frame update
@@ -54,7 +55,8 @@ public class NewMazeGoal : MonoBehaviour
         if(PillPoint == 2)
         {
             // Debug.Log("you did it!");
-            SceneManager.LoadScene("MitaWakePOV");
+            // SceneManager.LoadScene("MitaWakePOV");
+            IsWin = true;
         }
     }
 }

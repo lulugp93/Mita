@@ -59,6 +59,7 @@ public class M_Bubble : MonoBehaviour
         {
             transform.position = new Vector2(sbubMID.position.x, sbubMID.position.y);
             locked = true;
+            SppechWin.SpeechPoints += 1;
             myFx.PlayOneShot(Snapfx);
         }
         else

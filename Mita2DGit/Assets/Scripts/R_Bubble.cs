@@ -60,6 +60,7 @@ public class R_Bubble : MonoBehaviour
         {
             transform.position = new Vector2(sbubRIGHT.position.x, sbubRIGHT.position.y);
             locked = true;
+            SppechWin.SpeechPoints += 1;
             myFx.PlayOneShot(Snapfx);
         }
         else

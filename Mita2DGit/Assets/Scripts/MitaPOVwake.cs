@@ -11,6 +11,7 @@ public class MitaPOVwake : MonoBehaviour
     public GameObject awaken;
     public GameObject Lzone;
     public GameObject Rzone;
+    public static bool IsWin = false;
     private bool Lawake;
     private bool Rawake;
     public float y1;
@@ -65,6 +66,7 @@ public class MitaPOVwake : MonoBehaviour
                     Lclosed.SetActive(true);
                     Rawake = true;
                     //SceneManager.LoadScene("Day1_P2");
+                    IsWin = true;
                 }
             }
         }
@@ -74,7 +76,7 @@ public class MitaPOVwake : MonoBehaviour
             Lclosed.SetActive(false);
             Rclosed.SetActive(false);
             awaken.SetActive(true);
-            SceneManager.LoadScene("MainMenu");
+           // SceneManager.LoadScene("MainMenu");
         }
     }
 }

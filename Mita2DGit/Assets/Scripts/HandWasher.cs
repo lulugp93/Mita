@@ -13,6 +13,7 @@ public class HandWasher : MonoBehaviour
     public Image BubbleBar;
     public AudioSource myFx;
     public AudioClip Faucet;
+    public static bool IsWin = false;
     //float MaxBubble = 3f;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class HandWasher : MonoBehaviour
         InZone = false;  
     }
 
-    public void OnMouseOver()
+    public void OnMouseEnter()
     {
         InZone = true;
        // Entered = true;
@@ -46,8 +47,9 @@ public class HandWasher : MonoBehaviour
             WashTimer += Time.deltaTime;
             if (WashTimer >= RequiredTime)
             {
-                SceneManager.LoadScene("MainMenu");
-                 Debug.Log("You Wshed ur hands!");
+                // SceneManager.LoadScene("MainMenu");
+                IsWin = true;
+                // Debug.Log("You Wshed ur hands!");
 
             }
         }
