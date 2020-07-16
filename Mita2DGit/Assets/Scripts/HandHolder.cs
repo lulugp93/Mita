@@ -12,6 +12,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float requiredHoldTime;
     public GameObject HandisHeld;
     public GameObject HandnotHeld;
+    public GameObject CT2Hold;
+    public GameObject CT2NotHold;
     public static bool IsWin = false;
     public GameObject HandButton;
 
@@ -24,12 +26,25 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (!PauseMenu.IsPause)
         {
-            myAnimationController.enabled = true;
-            myAnimationController.SetBool("MoveRoom", true);
-            pointerDown = true;
-            HandisHeld.SetActive(true);
-            HandnotHeld.SetActive(false);
-            Debug.Log("OnPointerDown");
+            if (DayCounter.DayPoints == 12)
+            {
+                myAnimationController.enabled = true;
+                myAnimationController.SetBool("MoveRoom", true);
+                pointerDown = true;
+                CT2Hold.SetActive(true);
+                CT2NotHold.SetActive(false);
+                Debug.Log("OnPointerDown");
+            }
+
+            else
+            {
+                myAnimationController.enabled = true;
+                myAnimationController.SetBool("MoveRoom", true);
+                pointerDown = true;
+                HandisHeld.SetActive(true);
+                HandnotHeld.SetActive(false);
+                Debug.Log("OnPointerDown");
+            }
         }
     }
 
@@ -43,6 +58,14 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Start()
     {
         myAnimationController.enabled = false;
+        if(DayCounter.DayPoints == 2)
+        {
+            HandnotHeld.SetActive(true);
+        }
+        if (DayCounter.DayPoints == 12)
+        {
+            CT2NotHold.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -67,10 +90,22 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Reset()
     {
-        pointerDown = false;
-        // myAnimationController.SetBool("MoveRoom", false);
-        myAnimationController.enabled = false;
-        HandisHeld.SetActive(false);
-        HandnotHeld.SetActive(true);
+        if (DayCounter.DayPoints == 12)
+        {
+            pointerDown = false;
+            // myAnimationController.SetBool("MoveRoom", false);
+            myAnimationController.enabled = false;
+            CT2Hold.SetActive(false);
+            CT2NotHold.SetActive(true);
+        }
+
+        else
+        {
+            pointerDown = false;
+            // myAnimationController.SetBool("MoveRoom", false);
+            myAnimationController.enabled = false;
+            HandisHeld.SetActive(false);
+            HandnotHeld.SetActive(true);
+        }
     }
 }

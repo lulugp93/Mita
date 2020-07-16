@@ -29,6 +29,7 @@ public class TableSetter : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     {
         initialPosition = transform.position;
         IsMouseDown = false;
+        //locked = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)

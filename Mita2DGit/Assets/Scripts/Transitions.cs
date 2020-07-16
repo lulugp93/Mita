@@ -35,7 +35,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 1)
+        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 11)
         {
             if (WakeMe.IsWin)
             {
@@ -45,7 +45,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 2 || DayCounter.DayPoints == 7)
+        if (DayCounter.DayPoints == 2 || DayCounter.DayPoints == 7 || DayCounter.DayPoints == 12)
         {
             if (HandHolder.IsWin)
             {
@@ -62,16 +62,19 @@ public class Transitions : MonoBehaviour
                 StartCoroutine(LoadScene());
                 Complete = true;
                 DayCounter.DayPoints += 1;
+                TableSetter.locked = false;
+                CupSetter.locked = false;
             }
         }
 
-        if (DayCounter.DayPoints == 4)
+        if (DayCounter.DayPoints == 4 || DayCounter.DayPoints == 14)
         {
             if (SppechWin.IsWin)
             {
                 StartCoroutine(LoadScene());
                 Complete = true;
                 DayCounter.DayPoints += 1;
+                SppechWin.SpeechPoints = 0;
             }
         }
 
@@ -121,17 +124,37 @@ public class Transitions : MonoBehaviour
 
         IEnumerator LoadScene()
         {
-            AlarmSwipe.IsWin = false;
-            WakeMe.IsWin = false;
-            HandHolder.IsWin = false;
-            TableSet.IsWin = false;
-            SppechWin.IsWin = false;
-            Stereo.IsWin = false;
-            MitaPOVwake.IsWin = false;
-            HandWasher.IsWin = false;
-            TransitionAnim.SetTrigger("end");
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(SceneName);
+            if (DayCounter.DayPoints == 14)
+            {
+                AlarmSwipe.IsWin = false;
+                WakeMe.IsWin = false;
+                HandHolder.IsWin = false;
+                CupSetter.IsWin = false;
+                SppechWin.IsWin = false;
+                Stereo.IsWin = false;
+                MitaPOVwake.IsWin = false;
+                HandWasher.IsWin = false;
+                NewMazeGoal.IsWin = false;
+                TransitionAnim.SetTrigger("end");
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("MitaWakePOV");
+            }
+            else
+            {
+                AlarmSwipe.IsWin = false;
+                WakeMe.IsWin = false;
+                HandHolder.IsWin = false;
+                CupSetter.IsWin = false;
+                SppechWin.IsWin = false;
+                Stereo.IsWin = false;
+                MitaPOVwake.IsWin = false;
+                HandWasher.IsWin = false;
+                NewMazeGoal.IsWin = false;
+                TransitionAnim.SetTrigger("end");
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene(SceneName);
+            }
+
         }
     }
 }

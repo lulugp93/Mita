@@ -39,6 +39,10 @@ public class WakeMe : MonoBehaviour
             Pose3.SetActive(true);
             Bubble1.SetActive(false);
             timer = 1f;
+            if (DayCounter.DayPoints == 11)
+            {
+                IsWin = true;
+            }
 
         }
 
@@ -46,7 +50,10 @@ public class WakeMe : MonoBehaviour
         {
             Bubble2.SetActive(false);
             //Pose3.SetActive(false);
-            IsWin = true;
+            if (DayCounter.DayPoints == 1)
+            {
+                IsWin = true;
+            }
             //SceneManager.LoadScene("Day1_P3");
 
         }

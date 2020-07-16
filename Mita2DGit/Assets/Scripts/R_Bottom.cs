@@ -58,9 +58,14 @@ public class R_Bottom : MonoBehaviour
         if (Mathf.Abs(transform.position.x - sbubRIGHT.position.x) <=0.5f &&
             Mathf.Abs(transform.position.y - sbubRIGHT.position.y) <= 0.5f)
         {
+            if (!locked)
+            {
+                SppechWin.SpeechPoints += 1;
+                //Debug.Log("You get a point!");
+            }
             transform.position = new Vector2(sbubRIGHT.position.x, sbubRIGHT.position.y);
             locked = true;
-            SppechWin.SpeechPoints += 1;
+            //SppechWin.SpeechPoints += 1;
             myFx.PlayOneShot(Snapfx);
         }
         else

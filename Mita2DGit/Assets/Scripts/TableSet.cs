@@ -12,7 +12,7 @@ public class TableSet : MonoBehaviour
     public GameObject CupInPlace;
     public GameObject CupOutPlace;
     public GameObject TableIsSet;
-    public static bool IsWin = false;
+   // public static bool IsWin = false;
 
     public void TablSet()
     {
@@ -35,7 +35,7 @@ public class TableSet : MonoBehaviour
     }
     public void Finished()
     {
-        IsWin = true;
+        //IsWin = true;
        // SceneManager.LoadScene("SpeechGame");
     }
 }

@@ -12,6 +12,8 @@ public class SppechWin : MonoBehaviour
     public GameObject piece4;
     public GameObject piece5;
     public GameObject piece6;
+    public GameObject CT1Figure;
+    public GameObject CT2Figure;
     public static int SpeechPoints;
     private int NeededPoints;
 
@@ -25,9 +27,18 @@ public class SppechWin : MonoBehaviour
         {
             NeededPoints = 5;
             piece3.SetActive(false);
+            CT1Figure.SetActive(true);
 
         }
-        
+
+        if (DayCounter.DayPoints == 14)
+        {
+            NeededPoints = 6;
+            CT2Figure.SetActive(true);
+           // piece3.SetActive(false);
+
+        }
+
     }
 
     // Update is called once per frame
@@ -66,6 +77,12 @@ public class SppechWin : MonoBehaviour
         if (SpeechPoints == NeededPoints)
         {
             IsWin = true;
+            L_Bubble.locked = false;
+            M_Bubble.locked = false;
+            R_Bubble.locked = false;
+            L_Bottom.locked = false;
+            M_Bottom.locked = false;
+            R_Bottom.locked = false;
         }
         /*
          * if (L_Bubble.locked && M_Bubble.locked && R_Bubble.locked && L_Bottom.locked && M_Bottom.locked && R_Bottom.locked)

@@ -25,6 +25,7 @@ public class CupSetter : MonoBehaviour
     {
         initialPosition = transform.position;
         IsMouseDown = false;
+        //locked = false;
     }
 
     private void OnMouseEnter()

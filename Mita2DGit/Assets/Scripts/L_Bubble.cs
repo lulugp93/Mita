@@ -59,9 +59,14 @@ public class L_Bubble : MonoBehaviour
         if (Mathf.Abs(transform.position.x - sbubLEFT.position.x) <=0.5f &&
             Mathf.Abs(transform.position.y - sbubLEFT.position.y) <= 0.5f)
         {
+            if (!locked)
+            {
+                SppechWin.SpeechPoints += 1;
+                //Debug.Log("You get a point!");
+            }
             transform.position = new Vector2(sbubLEFT.position.x, sbubLEFT.position.y);
             locked = true;
-            SppechWin.SpeechPoints += 1;
+            //SppechWin.SpeechPoints += 1;
             myFx.PlayOneShot(Snapfx);
 
         }
