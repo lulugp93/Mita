@@ -2226,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 1994930774, guid: 3b053f3ee777d1847a32e7ebb3813ef9, type: 3}
       propertyPath: CT2Cursor
       value: 
-      objectReference: {fileID: 2800000, guid: ff7008ce4a3b5a14d879c826416d7278, type: 3}
+      objectReference: {fileID: 2800000, guid: 75e6f85a27fd914468afd952811ae48c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b053f3ee777d1847a32e7ebb3813ef9, type: 3}
 --- !u!1001 &3815025304128507712
