@@ -7,13 +7,17 @@ using UnityEngine.EventSystems;
 
 public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    private bool pointerDown;
+    public static bool pointerDown;
     private float pointerDownTimer;
     public float requiredHoldTime;
     public GameObject HandisHeld;
     public GameObject HandnotHeld;
     public GameObject CT2Hold;
     public GameObject CT2NotHold;
+    public GameObject LittleHallucnation1;
+    private bool Played;
+    public AudioSource myFx;
+    public AudioClip Foots;
     public static bool IsWin = false;
     public GameObject HandButton;
 
@@ -21,11 +25,29 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
    
 
     //public UnityEvent onLongClick;
+    public void FootstepsFX()
+    {
+        if (Played == false)
+        {
+            myFx.PlayOneShot(Foots);
+            Played = true;
+        }
+        if(Played == true)
+        {
+            myFx.UnPause();
+        }
+    }
+
+    public void PauseFeets()
+    {
+        myFx.Pause();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!PauseMenu.IsPause)
         {
+            
             if (DayCounter.DayPoints == 12)
             {
                 myAnimationController.enabled = true;
@@ -50,6 +72,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        
         Reset();
         Debug.Log("OnPointerUp");
         
@@ -57,6 +80,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
+        pointerDownTimer = 0;
         myAnimationController.enabled = false;
         if(DayCounter.DayPoints == 2)
         {
@@ -65,6 +89,10 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (DayCounter.DayPoints == 12)
         {
             CT2NotHold.SetActive(true);
+        }
+        if (DayCounter.DayPoints == 16)
+        {
+            LittleHallucnation1.SetActive(true);
         }
     }
 
@@ -107,5 +135,6 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             HandisHeld.SetActive(false);
             HandnotHeld.SetActive(true);
         }
+        
     }
 }

@@ -11,6 +11,7 @@ public class MitaPOVwake : MonoBehaviour
     public GameObject awaken;
     public GameObject Lzone;
     public GameObject Rzone;
+    public GameObject FingerUI;
     public static bool IsWin = false;
     private bool Lawake;
     private bool Rawake;
@@ -21,6 +22,14 @@ public class MitaPOVwake : MonoBehaviour
     {
         Lawake = false;
         Rawake = false;
+        if(DayCounter.DayPoints == 6)
+        {
+            FingerUI.SetActive(true);
+        }
+        else
+        {
+            FingerUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +52,7 @@ public class MitaPOVwake : MonoBehaviour
                     bothclosed.SetActive(false);
                     Rclosed.SetActive(true);
                     Lawake = true;
+                    FingerUI.SetActive(false);
                     //SceneManager.LoadScene("Day1_P2");
                 }
             }
@@ -65,8 +75,9 @@ public class MitaPOVwake : MonoBehaviour
                     bothclosed.SetActive(false);
                     Lclosed.SetActive(true);
                     Rawake = true;
+                    FingerUI.SetActive(false);
                     //SceneManager.LoadScene("Day1_P2");
-                    IsWin = true;
+
                 }
             }
         }
@@ -76,7 +87,8 @@ public class MitaPOVwake : MonoBehaviour
             Lclosed.SetActive(false);
             Rclosed.SetActive(false);
             awaken.SetActive(true);
-           // SceneManager.LoadScene("MainMenu");
+            IsWin = true;
+            // SceneManager.LoadScene("MainMenu");
         }
     }
 }

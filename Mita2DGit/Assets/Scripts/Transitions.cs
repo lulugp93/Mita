@@ -45,7 +45,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 2 || DayCounter.DayPoints == 7 || DayCounter.DayPoints == 12)
+        if (DayCounter.DayPoints == 2 || DayCounter.DayPoints == 7 || DayCounter.DayPoints == 12 || DayCounter.DayPoints == 16)
         {
             if (HandHolder.IsWin)
             {
@@ -88,7 +88,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 6)
+        if (DayCounter.DayPoints == 6 || DayCounter.DayPoints == 15)
         {
             if (MitaPOVwake.IsWin)
             {
@@ -98,7 +98,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 8)
+        if (DayCounter.DayPoints == 8 || DayCounter.DayPoints == 17)
         {
             if (HandWasher.IsWin)
             {
@@ -108,7 +108,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 9)
+        if (DayCounter.DayPoints == 9 || DayCounter.DayPoints == 18)
         {
             if (NewMazeGoal.IsWin)
             {

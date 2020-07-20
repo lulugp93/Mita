@@ -12,6 +12,8 @@ public class WakeMe : MonoBehaviour
     public GameObject Pose1;
     public GameObject Pose2;
     public GameObject Pose3;
+    public AudioSource myFx;
+    public AudioClip Rustle;
     public static bool IsWin = false;
 
     public void Sleepyhead()
@@ -19,19 +21,21 @@ public class WakeMe : MonoBehaviour
 
         //void OnMouseDown()
        // {
-             Clicks++; 
-       // }
+             Clicks++;
+        // }
+        myFx.PlayOneShot(Rustle);
 
         Debug.Log(Clicks);
-        if (Clicks == 1)
+        if (Clicks == 1 || Clicks == 4)
         {
             Bubble1.SetActive(true);
             Pose1.SetActive(false);
+            //Pose3.SetActive(false);
             Pose2.SetActive(true);
             timer = 1f;
         }
 
-        if (Clicks == 2)
+        if (Clicks == 2 || Clicks == 5)
         {
             Bubble1.SetActive(false);
             Bubble2.SetActive(true);
@@ -46,10 +50,11 @@ public class WakeMe : MonoBehaviour
 
         }
 
-        if (Clicks == 3)
+        if (Clicks == 3 || Clicks == 6)
         {
             Bubble2.SetActive(false);
-            //Pose3.SetActive(false);
+            Pose3.SetActive(false);
+            Pose2.SetActive(true);
             if (DayCounter.DayPoints == 1)
             {
                 IsWin = true;
