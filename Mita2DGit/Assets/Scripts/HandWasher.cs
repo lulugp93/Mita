@@ -8,6 +8,7 @@ public class HandWasher : MonoBehaviour
 {
     public bool InZone;
     //private bool Entered;
+    public GameObject MirrorBooBoo;
     private float WashTimer;
     public float RequiredTime;
     public Image BubbleBar;
@@ -20,6 +21,10 @@ public class HandWasher : MonoBehaviour
     void Start()
     {
         InZone = false;  
+        if (DayCounter.DayPoints == 28)
+        {
+            MirrorBooBoo.SetActive(true);
+        }
     }
 
     public void OnMouseEnter()

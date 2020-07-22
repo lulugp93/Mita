@@ -7,6 +7,9 @@ public class WakeMe : MonoBehaviour
 {
     private float timer = 0f;
     int Clicks = 0;
+    int NeededClicks = 0;
+    public GameObject TapZone;
+    public GameObject FloorButton;
     public GameObject Bubble1;
     public GameObject Bubble2;
     public GameObject Pose1;
@@ -25,7 +28,7 @@ public class WakeMe : MonoBehaviour
         // }
         myFx.PlayOneShot(Rustle);
 
-        Debug.Log(Clicks);
+        //Debug.Log(Clicks);
         if (Clicks == 1 || Clicks == 4)
         {
             Bubble1.SetActive(true);
@@ -43,10 +46,12 @@ public class WakeMe : MonoBehaviour
             Pose3.SetActive(true);
             Bubble1.SetActive(false);
             timer = 1f;
-            if (DayCounter.DayPoints == 11)
+            /*
+             * if (DayCounter.DayPoints == 11)
             {
                 IsWin = true;
             }
+            */
 
         }
 
@@ -55,10 +60,12 @@ public class WakeMe : MonoBehaviour
             Bubble2.SetActive(false);
             Pose3.SetActive(false);
             Pose2.SetActive(true);
-            if (DayCounter.DayPoints == 1)
+            timer = 1f;
+           /* if (DayCounter.DayPoints == 1)
             {
                 IsWin = true;
             }
+            */
             //SceneManager.LoadScene("Day1_P3");
 
         }
@@ -66,7 +73,30 @@ public class WakeMe : MonoBehaviour
 
     public void Start()
     {
+        if (DayCounter.DayPoints == 1)
+        {
+            NeededClicks = 3;
+        }
 
+        if (DayCounter.DayPoints == 11)
+        {
+            NeededClicks = 2;
+        }
+        if (DayCounter.DayPoints == 31)
+        {
+            NeededClicks = 4;
+        }
+        if (DayCounter.DayPoints == 20)
+        {
+            Pose1.SetActive(false);
+            TapZone.SetActive(false);
+            FloorButton.SetActive(true);
+        }
+    }
+
+    public void FloorWin()
+    {
+        IsWin = true;
     }
 
   
@@ -79,6 +109,10 @@ public class WakeMe : MonoBehaviour
         {
             Bubble1.SetActive(false);
             Bubble2.SetActive(false);
+        }
+        if(Clicks == NeededClicks)
+        {
+            IsWin = true;
         }
     }
     

@@ -20,6 +20,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public AudioClip Foots;
     public static bool IsWin = false;
     public GameObject HandButton;
+    public GameObject BooBoo;
+    public GameObject NotHoldBooBoo;
 
     [SerializeField] private Animator myAnimationController;
    
@@ -74,15 +76,16 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         
         Reset();
-        Debug.Log("OnPointerUp");
+        //Debug.Log("OnPointerUp");
         
     }
     // Start is called before the first frame update
     void Start()
     {
-        pointerDownTimer = 0;
+        pointerDownTimer = 0f;
+        requiredHoldTime = 3.7f;
         myAnimationController.enabled = false;
-        if(DayCounter.DayPoints == 2)
+        if(DayCounter.DayPoints == 2 || DayCounter.DayPoints == 21 || DayCounter.DayPoints == 32)
         {
             HandnotHeld.SetActive(true);
         }
@@ -93,6 +96,17 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (DayCounter.DayPoints == 16)
         {
             LittleHallucnation1.SetActive(true);
+        }
+        if (DayCounter.DayPoints == 21)
+        {
+            BooBoo.SetActive(true);
+            NotHoldBooBoo.SetActive(true);
+        }
+
+        if(DayCounter.DayPoints != 21)
+        {
+            BooBoo.SetActive(false);
+            NotHoldBooBoo.SetActive(false);
         }
     }
 

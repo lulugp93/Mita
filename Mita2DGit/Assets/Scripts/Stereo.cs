@@ -81,7 +81,15 @@ public class Stereo : MonoBehaviour
     }
     void Start()
     {
-        
+        Disc1.SetActive(false);
+        Disc2.SetActive(false);
+        Disc3.SetActive(false);
+        Disc1In = false;
+        Disc2In = false;
+        Disc3In = false;
+        NeutralFace.SetActive(true);
+        HappyFace.SetActive(false);
+        UhOhFace.SetActive(false);
     }
 
     

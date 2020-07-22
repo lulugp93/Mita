@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class AlarmSwipe : MonoBehaviour
 {
 
-    private bool CT1 = false;
+    private bool CT1;
     public GameObject Phone;
     public GameObject PhoneAura;
     public GameObject Phone2;
@@ -21,7 +21,7 @@ public class AlarmSwipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(DayCounter.DayPoints == 0)
+        if(DayCounter.DayPoints == 0 || DayCounter.DayPoints == 19 || DayCounter.DayPoints == 30)
         {
             Phone.SetActive(true);
             PhoneAura.SetActive(true);
@@ -33,6 +33,7 @@ public class AlarmSwipe : MonoBehaviour
             Phone2.SetActive(true);
             Phone2Aura.SetActive(true);
             Phone2Button.SetActive(true);
+            CT1 = false;
         }
     }
 

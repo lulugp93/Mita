@@ -10,7 +10,7 @@ public class CursorCT1 : MonoBehaviour
     void Start()
     {
         // Cursor.visible = false;
-        if (DayCounter.DayPoints == 0)
+        if (DayCounter.DayPoints == 0 || DayCounter.DayPoints == 19)
         {
             Cursor.SetCursor(cursorArrow, new Vector2(10, 10), CursorMode.ForceSoftware);
         }
