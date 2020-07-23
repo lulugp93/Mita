@@ -387,6 +387,8 @@ MonoBehaviour:
   BubbleBar: {fileID: 0}
   myFx: {fileID: 0}
   Faucet: {fileID: 0}
+  RegCursor: {fileID: 0}
+  WashingCursor: {fileID: 0}
 --- !u!1 &1096645595
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +454,8 @@ MonoBehaviour:
   BubbleBar: {fileID: 942787048}
   myFx: {fileID: 1096645599}
   Faucet: {fileID: 8300000, guid: 295927658f39d9440bc015b07a9768d7, type: 3}
+  RegCursor: {fileID: 2800000, guid: bb2e7df84034a0d468280d8b0e1c1c1c, type: 3}
+  WashingCursor: {fileID: 2800000, guid: 42c763a3be620d94e9acc52793fc8d49, type: 3}
 --- !u!4 &1096645598
 Transform:
   m_ObjectHideFlags: 0

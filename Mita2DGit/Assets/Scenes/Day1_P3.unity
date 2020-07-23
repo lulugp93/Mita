@@ -807,6 +807,8 @@ MonoBehaviour:
   HandButton: {fileID: 0}
   BooBoo: {fileID: 0}
   NotHoldBooBoo: {fileID: 0}
+  FaceScribbleStill: {fileID: 0}
+  FaceScribbleWalk: {fileID: 0}
   myAnimationController: {fileID: 0}
 --- !u!1 &803381054
 GameObject:
@@ -1132,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1014233478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1876,6 +1878,8 @@ MonoBehaviour:
   HandButton: {fileID: 1714212645}
   BooBoo: {fileID: 1543457959}
   NotHoldBooBoo: {fileID: 1197106651}
+  FaceScribbleStill: {fileID: 0}
+  FaceScribbleWalk: {fileID: 0}
   myAnimationController: {fileID: 774919047}
 --- !u!114 &1714212651
 MonoBehaviour:

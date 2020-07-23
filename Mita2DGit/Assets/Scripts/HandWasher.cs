@@ -16,6 +16,8 @@ public class HandWasher : MonoBehaviour
     public Image BubbleBar;
     public AudioSource myFx;
     public AudioClip Faucet;
+    public Texture2D RegCursor;
+    public Texture2D WashingCursor;
     public static bool IsWin = false;
     //float MaxBubble = 3f;
 
@@ -39,6 +41,7 @@ public class HandWasher : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        Cursor.SetCursor(WashingCursor, new Vector2(10, 10), CursorMode.ForceSoftware);
         InZone = true;
        // Entered = true;
         myFx.PlayOneShot(Faucet);
@@ -47,6 +50,7 @@ public class HandWasher : MonoBehaviour
 
     public void OnMouseExit()
     {
+        Cursor.SetCursor(RegCursor, new Vector2(10, 10), CursorMode.ForceSoftware);
         InZone = false;
         myFx.Pause();
         Debug.Log("Ur Out of da zone!");

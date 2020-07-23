@@ -59,7 +59,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 pointerDown = true;
                 CT2Hold.SetActive(true);
                 CT2NotHold.SetActive(false);
-                Debug.Log("OnPointerDown");
+               // Debug.Log("OnPointerDown");
             }
 
             else
@@ -69,7 +69,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 pointerDown = true;
                 HandisHeld.SetActive(true);
                 HandnotHeld.SetActive(false);
-                Debug.Log("OnPointerDown");
+               // Debug.Log("OnPointerDown");
             }
         }
     }
@@ -84,6 +84,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
+        pointerDown = false;
         pointerDownTimer = 0f;
         requiredHoldTime = 3.7f;
         myAnimationController.enabled = false;
@@ -111,11 +112,13 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             FaceScribbleWalk.SetActive(true);
         }
 
-        if (DayCounter.DayPoints != 21)
+        /*
+         * if (DayCounter.DayPoints != 21)
         {
             BooBoo.SetActive(false);
             NotHoldBooBoo.SetActive(false);
         }
+        */
     }
 
     // Update is called once per frame
@@ -136,11 +139,19 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             }
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log(pointerDownTimer);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log(requiredHoldTime);
+        }
     }
 
     private void Reset()
     {
-        if (DayCounter.DayPoints == 12)
+        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
         {
             pointerDown = false;
             // myAnimationController.SetBool("MoveRoom", false);
