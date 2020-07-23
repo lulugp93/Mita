@@ -45,7 +45,7 @@ public class SppechWin : MonoBehaviour
 
         }
 
-        if (DayCounter.DayPoints == 14)
+        if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 43)
         {
             NeededPoints = 6;
             CT2Figure.SetActive(true);

@@ -25,7 +25,7 @@ public class Transitions : MonoBehaviour
             DayCounter.DayPoints += 1;
         }
 
-        if (DayCounter.DayPoints == 0 || DayCounter.DayPoints == 10 || DayCounter.DayPoints == 19 || DayCounter.DayPoints == 30)
+        if (DayCounter.DayPoints == 0 || DayCounter.DayPoints == 10 || DayCounter.DayPoints == 19 || DayCounter.DayPoints == 30 || DayCounter.DayPoints == 39)
         {
             if (AlarmSwipe.IsWin)
             {
@@ -35,7 +35,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 11 || DayCounter.DayPoints == 20 || DayCounter.DayPoints == 31)
+        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 11 || DayCounter.DayPoints == 20 || DayCounter.DayPoints == 31 || DayCounter.DayPoints == 40)
         {
             if (WakeMe.IsWin)
             {
@@ -46,7 +46,7 @@ public class Transitions : MonoBehaviour
         }
 
         if (DayCounter.DayPoints == 2 || DayCounter.DayPoints == 7 || DayCounter.DayPoints == 12 || DayCounter.DayPoints == 16 || DayCounter.DayPoints == 21 || DayCounter.DayPoints == 27
-            || DayCounter.DayPoints == 32)
+            || DayCounter.DayPoints == 32 || DayCounter.DayPoints == 36 || DayCounter.DayPoints == 41 || DayCounter.DayPoints == 45)
         {
             if (HandHolder.IsWin)
             {
@@ -56,7 +56,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 3 || DayCounter.DayPoints == 13 || DayCounter.DayPoints == 22 || DayCounter.DayPoints == 33)
+        if (DayCounter.DayPoints == 3 || DayCounter.DayPoints == 13 || DayCounter.DayPoints == 22 || DayCounter.DayPoints == 33 || DayCounter.DayPoints == 42)
         {
             if (CupSetter.IsWin)
             {
@@ -68,7 +68,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 4 || DayCounter.DayPoints == 14 || DayCounter.DayPoints == 23 || DayCounter.DayPoints == 34)
+        if (DayCounter.DayPoints == 4 || DayCounter.DayPoints == 14 || DayCounter.DayPoints == 23 || DayCounter.DayPoints == 34 || DayCounter.DayPoints == 43)
         {
             if (SppechWin.IsWin)
             {
@@ -89,7 +89,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 6 || DayCounter.DayPoints == 15 || DayCounter.DayPoints == 25)
+        if (DayCounter.DayPoints == 6 || DayCounter.DayPoints == 15 || DayCounter.DayPoints == 25 || DayCounter.DayPoints == 35 || DayCounter.DayPoints == 44)
         {
             if (MitaPOVwake.IsWin)
             {
@@ -99,7 +99,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 8 || DayCounter.DayPoints == 17 || DayCounter.DayPoints == 28)
+        if (DayCounter.DayPoints == 8 || DayCounter.DayPoints == 17 || DayCounter.DayPoints == 28 || DayCounter.DayPoints == 37 || DayCounter.DayPoints == 46)
         {
             if (HandWasher.IsWin)
             {
@@ -109,7 +109,7 @@ public class Transitions : MonoBehaviour
             }
         }
 
-        if (DayCounter.DayPoints == 9 || DayCounter.DayPoints == 18 || DayCounter.DayPoints == 29)
+        if (DayCounter.DayPoints == 9 || DayCounter.DayPoints == 18 || DayCounter.DayPoints == 29 || DayCounter.DayPoints == 38 || DayCounter.DayPoints == 47)
         {
             if (NewMazeGoal.IsWin)
             {
@@ -135,7 +135,7 @@ public class Transitions : MonoBehaviour
 
         IEnumerator LoadScene()
         {
-            if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 34)
+            if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 34 || DayCounter.DayPoints == 43)
             {
                 AlarmSwipe.IsWin = false;
                 WakeMe.IsWin = false;

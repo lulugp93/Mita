@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HandWsh.unity
     guid: ed6e5f24cc3ffbd429c8474a18558479
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a82d0d3cf31d54e4fb587bd21dce1b06
   m_configObjects: {}

@@ -22,6 +22,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject HandButton;
     public GameObject BooBoo;
     public GameObject NotHoldBooBoo;
+    public GameObject FaceScribbleStill;
+    public GameObject FaceScribbleWalk;
 
     [SerializeField] private Animator myAnimationController;
    
@@ -50,7 +52,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (!PauseMenu.IsPause)
         {
             
-            if (DayCounter.DayPoints == 12)
+            if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
             {
                 myAnimationController.enabled = true;
                 myAnimationController.SetBool("MoveRoom", true);
@@ -89,7 +91,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             HandnotHeld.SetActive(true);
         }
-        if (DayCounter.DayPoints == 12)
+        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
         {
             CT2NotHold.SetActive(true);
         }
@@ -103,7 +105,13 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             NotHoldBooBoo.SetActive(true);
         }
 
-        if(DayCounter.DayPoints != 21)
+        if (DayCounter.DayPoints == 36 || DayCounter.DayPoints == 45)
+        {
+            FaceScribbleStill.SetActive(true);
+            FaceScribbleWalk.SetActive(true);
+        }
+
+        if (DayCounter.DayPoints != 21)
         {
             BooBoo.SetActive(false);
             NotHoldBooBoo.SetActive(false);

@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 746122239}
   - component: {fileID: 746122238}
   - component: {fileID: 746122237}
+  - component: {fileID: 746122241}
   m_Layer: 5
   m_Name: FloorButton
   m_TagString: Untagged
@@ -669,6 +670,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746122235}
   m_CullTransparentMesh: 0
+--- !u!114 &746122241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746122235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1 &917909446
 GameObject:
   m_ObjectHideFlags: 0

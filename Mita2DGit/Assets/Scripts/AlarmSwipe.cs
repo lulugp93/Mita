@@ -28,7 +28,7 @@ public class AlarmSwipe : MonoBehaviour
             CT1 = true;
         }
 
-        if (DayCounter.DayPoints == 10)
+        if (DayCounter.DayPoints == 10 || DayCounter.DayPoints == 39)
         {
             Phone2.SetActive(true);
             Phone2Aura.SetActive(true);

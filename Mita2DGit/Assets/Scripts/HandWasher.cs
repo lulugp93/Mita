@@ -9,6 +9,8 @@ public class HandWasher : MonoBehaviour
     public bool InZone;
     //private bool Entered;
     public GameObject MirrorBooBoo;
+    public GameObject MirrorHallu1;
+    public GameObject LittleGirlHallu;
     private float WashTimer;
     public float RequiredTime;
     public Image BubbleBar;
@@ -24,6 +26,14 @@ public class HandWasher : MonoBehaviour
         if (DayCounter.DayPoints == 28)
         {
             MirrorBooBoo.SetActive(true);
+        }
+        if (DayCounter.DayPoints == 37)
+        {
+            MirrorHallu1.SetActive(true);
+        }
+        if(DayCounter.DayPoints == 46)
+        {
+            LittleGirlHallu.SetActive(true);
         }
     }
 

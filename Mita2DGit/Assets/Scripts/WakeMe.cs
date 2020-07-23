@@ -73,7 +73,7 @@ public class WakeMe : MonoBehaviour
 
     public void Start()
     {
-        if (DayCounter.DayPoints == 1)
+        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 40)
         {
             NeededClicks = 3;
         }
@@ -88,15 +88,19 @@ public class WakeMe : MonoBehaviour
         }
         if (DayCounter.DayPoints == 20)
         {
+            NeededClicks = 10;
             Pose1.SetActive(false);
             TapZone.SetActive(false);
             FloorButton.SetActive(true);
+            
         }
     }
 
     public void FloorWin()
     {
-        IsWin = true;
+        
+            IsWin = true;
+        
     }
 
   
