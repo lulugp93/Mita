@@ -18,6 +18,7 @@ public class HandWasher : MonoBehaviour
     public AudioClip Faucet;
     public Texture2D RegCursor;
     public Texture2D WashingCursor;
+    [SerializeField] ParticleSystem SoapBubbles = null;
     public static bool IsWin = false;
     //float MaxBubble = 3f;
 
@@ -25,15 +26,15 @@ public class HandWasher : MonoBehaviour
     void Start()
     {
         InZone = false;  
-        if (DayCounter.DayPoints == 28)
+        if (DayCounter.DayPoints == 28 || DayCounter.DayPoints == 76)
         {
             MirrorBooBoo.SetActive(true);
         }
-        if (DayCounter.DayPoints == 37)
+        if (DayCounter.DayPoints == 37 || DayCounter.DayPoints == 76 || DayCounter.DayPoints == 95)
         {
             MirrorHallu1.SetActive(true);
         }
-        if(DayCounter.DayPoints == 46)
+        if(DayCounter.DayPoints == 46 || DayCounter.DayPoints == 56)
         {
             LittleGirlHallu.SetActive(true);
         }
@@ -43,7 +44,8 @@ public class HandWasher : MonoBehaviour
     {
         Cursor.SetCursor(WashingCursor, new Vector2(10, 10), CursorMode.ForceSoftware);
         InZone = true;
-       // Entered = true;
+        SoapBubbles.Play();
+        // Entered = true;
         myFx.PlayOneShot(Faucet);
         Debug.Log("Ur in da zone!");
     }
@@ -52,6 +54,7 @@ public class HandWasher : MonoBehaviour
     {
         Cursor.SetCursor(RegCursor, new Vector2(10, 10), CursorMode.ForceSoftware);
         InZone = false;
+        SoapBubbles.Stop();
         myFx.Pause();
         Debug.Log("Ur Out of da zone!");
     }
@@ -66,6 +69,7 @@ public class HandWasher : MonoBehaviour
             WashTimer += Time.deltaTime;
             if (WashTimer >= RequiredTime)
             {
+                Cursor.SetCursor(RegCursor, new Vector2(10, 10), CursorMode.ForceSoftware);
                 // SceneManager.LoadScene("MainMenu");
                 IsWin = true;
                 // Debug.Log("You Wshed ur hands!");

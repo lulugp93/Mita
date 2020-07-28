@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class MitaPOVFloor : MonoBehaviour
 {
-    private float FloorTimer = 4f;
+    private float FloorTimer;
     private bool HandAvailable;
     public static bool IsWin;
     // Start is called before the first frame update
     void Start()
     {
         HandAvailable = false;
+
+        //if(DayCounter.DayPoints == 26)
+       // {
+            FloorTimer = 6f;
+       // }
+        //if(DayCounter.DayPoints == 74)
+       // {
+           // FloorTimer = 10f;
+       // }
     }
 
     public void HelpUp()

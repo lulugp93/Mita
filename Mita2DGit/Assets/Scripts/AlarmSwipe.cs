@@ -14,6 +14,9 @@ public class AlarmSwipe : MonoBehaviour
     public GameObject Phone2;
     public GameObject Phone2Aura;
     public GameObject Phone2Button;
+    public AudioSource myFx;
+    public AudioClip SwipeFX;
+    public AudioClip PhoneClickfx;
     public static bool IsWin = false;
     public float x1;
     public float x2;
@@ -21,14 +24,15 @@ public class AlarmSwipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(DayCounter.DayPoints == 0 || DayCounter.DayPoints == 19 || DayCounter.DayPoints == 30)
+        if(DayCounter.DayPoints == 0 || DayCounter.DayPoints == 19 || DayCounter.DayPoints == 30 || DayCounter.DayPoints == 48 || DayCounter.DayPoints == 67 || DayCounter.DayPoints == 87
+            || DayCounter.DayPoints == 97)
         {
             Phone.SetActive(true);
             PhoneAura.SetActive(true);
             CT1 = true;
         }
 
-        if (DayCounter.DayPoints == 10 || DayCounter.DayPoints == 39)
+        if (DayCounter.DayPoints == 10 || DayCounter.DayPoints == 39 | DayCounter.DayPoints == 58 || DayCounter.DayPoints == 78)
         {
             Phone2.SetActive(true);
             Phone2Aura.SetActive(true);
@@ -39,12 +43,17 @@ public class AlarmSwipe : MonoBehaviour
 
     public void BlockBerryAlarmOff()
     {
+        myFx.PlayOneShot(PhoneClickfx);
         IsWin = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            DayCounter.DayPoints += 97;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             x1 = Input.mousePosition.x;
@@ -56,6 +65,7 @@ public class AlarmSwipe : MonoBehaviour
 
             if (x2 > x1 && !PauseMenu.IsPause && CT1 == true)
             {
+                myFx.PlayOneShot(SwipeFX);
                 //Destroy(Phone);
                 //SceneManager.LoadScene("Day1_P2");
                 IsWin = true;

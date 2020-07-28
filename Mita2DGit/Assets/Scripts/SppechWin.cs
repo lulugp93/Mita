@@ -28,7 +28,7 @@ public class SppechWin : MonoBehaviour
         R_Bottom.locked = false;
         SpeechPoints = 0;
 
-        if(DayCounter.DayPoints == 4)
+        if(DayCounter.DayPoints == 4 || DayCounter.DayPoints == 52 || DayCounter.DayPoints == 91)
         {
             NeededPoints = 5;
             piece3.SetActive(false);
@@ -44,8 +44,17 @@ public class SppechWin : MonoBehaviour
             CT1Figure.SetActive(true);
 
         }
+        if (DayCounter.DayPoints == 71)
+        {
+            NeededPoints = 3;
+            piece1.SetActive(false);
+            piece3.SetActive(false);
+            piece5.SetActive(false);
+            CT1Figure.SetActive(true);
 
-        if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 43)
+        }
+
+        if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 43 || DayCounter.DayPoints == 62 || DayCounter.DayPoints == 82)
         {
             NeededPoints = 6;
             CT2Figure.SetActive(true);

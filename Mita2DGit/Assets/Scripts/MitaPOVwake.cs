@@ -12,6 +12,8 @@ public class MitaPOVwake : MonoBehaviour
     public GameObject Lzone;
     public GameObject Rzone;
     public GameObject FingerUI;
+    public AudioSource myFx;
+    public AudioClip WakeFX;
     public static bool IsWin = false;
     private bool Lawake;
     private bool Rawake;
@@ -48,11 +50,16 @@ public class MitaPOVwake : MonoBehaviour
 
                 if (y2 > y1 && !PauseMenu.IsPause)
                 {
+                    if(Lawake == false)
+                    {
+                        myFx.PlayOneShot(WakeFX);
+                    }
                     Destroy(Lzone);
                     bothclosed.SetActive(false);
                     Rclosed.SetActive(true);
                     Lawake = true;
                     FingerUI.SetActive(false);
+                    
                     //SceneManager.LoadScene("Day1_P2");
                 }
             }
@@ -71,11 +78,16 @@ public class MitaPOVwake : MonoBehaviour
 
                 if (y2 > y1 && !PauseMenu.IsPause)
                 {
+                    if (Rawake == false)
+                    {
+                        myFx.PlayOneShot(WakeFX);
+                    }
                     Destroy(Rzone);
                     bothclosed.SetActive(false);
                     Lclosed.SetActive(true);
                     Rawake = true;
                     FingerUI.SetActive(false);
+                   
                     //SceneManager.LoadScene("Day1_P2");
 
                 }

@@ -15,6 +15,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject CT2Hold;
     public GameObject CT2NotHold;
     public GameObject LittleHallucnation1;
+    public GameObject Distortion1;
+    public GameObject Distortion2;
     private bool Played;
     public AudioSource myFx;
     public AudioClip Foots;
@@ -52,7 +54,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (!PauseMenu.IsPause)
         {
             
-            if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
+            if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41 || DayCounter.DayPoints == 60 || DayCounter.DayPoints == 80)
             {
                 myAnimationController.enabled = true;
                 myAnimationController.SetBool("MoveRoom", true);
@@ -88,11 +90,11 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         pointerDownTimer = 0f;
         requiredHoldTime = 3.7f;
         myAnimationController.enabled = false;
-        if(DayCounter.DayPoints == 2 || DayCounter.DayPoints == 21 || DayCounter.DayPoints == 32)
+        if(DayCounter.DayPoints == 2 || DayCounter.DayPoints == 21 || DayCounter.DayPoints == 32 || DayCounter.DayPoints == 50 || DayCounter.DayPoints == 69 || DayCounter.DayPoints == 89)
         {
             HandnotHeld.SetActive(true);
         }
-        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
+        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41 || DayCounter.DayPoints == 60 || DayCounter.DayPoints == 80)
         {
             CT2NotHold.SetActive(true);
         }
@@ -100,16 +102,24 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             LittleHallucnation1.SetActive(true);
         }
-        if (DayCounter.DayPoints == 21)
+        if (DayCounter.DayPoints == 21 || DayCounter.DayPoints == 69)
         {
             BooBoo.SetActive(true);
             NotHoldBooBoo.SetActive(true);
         }
 
-        if (DayCounter.DayPoints == 36 || DayCounter.DayPoints == 45)
+        if (DayCounter.DayPoints == 36 || DayCounter.DayPoints == 45 || DayCounter.DayPoints == 75)
         {
             FaceScribbleStill.SetActive(true);
             FaceScribbleWalk.SetActive(true);
+        }
+        if(DayCounter.DayPoints == 75 || DayCounter.DayPoints == 84)
+        {
+            Distortion1.SetActive(true);
+        }
+        if(DayCounter.DayPoints == 94)
+        {
+            Distortion2.SetActive(true);
         }
 
         /*

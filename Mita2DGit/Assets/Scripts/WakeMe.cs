@@ -15,9 +15,12 @@ public class WakeMe : MonoBehaviour
     public GameObject Pose1;
     public GameObject Pose2;
     public GameObject Pose3;
+    private float CreditsTimer;
+    public float EndTime;
     public AudioSource myFx;
     public AudioClip Rustle;
     public static bool IsWin = false;
+    public Animator myAnimationController;
 
     public void Sleepyhead()
     {
@@ -28,52 +31,93 @@ public class WakeMe : MonoBehaviour
         // }
         myFx.PlayOneShot(Rustle);
 
-        //Debug.Log(Clicks);
-        if (Clicks == 1 || Clicks == 4)
+        if (DayCounter.DayPoints != 98)
         {
-            Bubble1.SetActive(true);
-            Pose1.SetActive(false);
-            //Pose3.SetActive(false);
-            Pose2.SetActive(true);
-            timer = 1f;
-        }
-
-        if (Clicks == 2 || Clicks == 5)
-        {
-            Bubble1.SetActive(false);
-            Bubble2.SetActive(true);
-            Pose2.SetActive(false);
-            Pose3.SetActive(true);
-            Bubble1.SetActive(false);
-            timer = 1f;
-            /*
-             * if (DayCounter.DayPoints == 11)
+            if (Clicks == 1 || Clicks == 4)
             {
-                IsWin = true;
+                Bubble1.SetActive(true);
+                Pose1.SetActive(false);
+                //Pose3.SetActive(false);
+                Pose2.SetActive(true);
+                timer = 1f;
             }
-            */
 
-        }
-
-        if (Clicks == 3 || Clicks == 6)
-        {
-            Bubble2.SetActive(false);
-            Pose3.SetActive(false);
-            Pose2.SetActive(true);
-            timer = 1f;
-           /* if (DayCounter.DayPoints == 1)
+            if (Clicks == 2 || Clicks == 5)
             {
-                IsWin = true;
+                Bubble1.SetActive(false);
+                Bubble2.SetActive(true);
+                Pose2.SetActive(false);
+                Pose3.SetActive(true);
+                Bubble1.SetActive(false);
+                timer = 1f;
+                /*
+                 * if (DayCounter.DayPoints == 11)
+                {
+                    IsWin = true;
+                }
+                */
+
             }
-            */
-            //SceneManager.LoadScene("Day1_P3");
+
+            if (Clicks == 3 || Clicks == 6)
+            {
+                Bubble2.SetActive(false);
+                Bubble1.SetActive(true);
+                Pose3.SetActive(false);
+                Pose1.SetActive(true);
+                timer = 1f;
+                /* if (DayCounter.DayPoints == 1)
+                 {
+                     IsWin = true;
+                 }
+                 */
+                //SceneManager.LoadScene("Day1_P3");
+
+            }
+        }
+        
+    }
+
+    public void OnMouseDown()
+    {
+        if (DayCounter.DayPoints == 98)
+        {
+            myAnimationController.enabled = true;
+            myAnimationController.SetBool("EndCredits", true);
+            CreditsTimer += Time.deltaTime;
 
         }
+        
+    }
+
+    public void OnMouseUp()
+    {
+        if (DayCounter.DayPoints == 98)
+        {
+            myAnimationController.enabled = false;
+        }
+       /* if (CreditsTimer <= 0)
+        {
+            SceneManager.LoadScene("Credits");
+        }
+        */
     }
 
     public void Start()
     {
-        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 40)
+        CreditsTimer = 0f;
+        EndTime = 0.26f;
+        if (DayCounter.DayPoints == 98)
+        {
+            Pose2.SetActive(true);
+            Pose1.SetActive(false);
+        }
+        myAnimationController.enabled = false;
+        if (DayCounter.DayPoints == 79)
+        {
+            NeededClicks = 1;
+        }
+        if (DayCounter.DayPoints == 1 || DayCounter.DayPoints == 40 || DayCounter.DayPoints == 88)
         {
             NeededClicks = 3;
         }
@@ -82,11 +126,15 @@ public class WakeMe : MonoBehaviour
         {
             NeededClicks = 2;
         }
-        if (DayCounter.DayPoints == 31)
+        if (DayCounter.DayPoints == 31 || DayCounter.DayPoints == 49)
         {
             NeededClicks = 4;
         }
-        if (DayCounter.DayPoints == 20)
+        if (DayCounter.DayPoints == 59)
+        {
+            NeededClicks = 6;
+        }
+        if (DayCounter.DayPoints == 20 || DayCounter.DayPoints == 68)
         {
             NeededClicks = 10;
             Pose1.SetActive(false);
@@ -107,6 +155,16 @@ public class WakeMe : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log(CreditsTimer);
+        }
+        if (CreditsTimer >= EndTime)
+        {
+            Debug.Log("You should transition now");
+            SceneManager.LoadScene("Credits");
+        }
+
         timer -= Time.deltaTime;
         
         if (timer <= 0)
