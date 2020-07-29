@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class NecklaceButton : MonoBehaviour
 {
-    public float timer = 0f;
-    public GameObject Flashback;
+    public float FBtimer = 0f;
+    public GameObject FlashbackImage;
     public GameObject Buttoz;
     public GameObject Uselace;
 
 
-    public void Flasher()
+    public void NecklaceFlash()
     {
-        Flashback.SetActive(true);
+        FlashbackImage.SetActive(true);
         //Buttoz.SetActive(false);
         //Uselace.SetActive(true);
-        timer = 2f;
+        FBtimer = 2f;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,11 +26,11 @@ public class NecklaceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        FBtimer -= Time.deltaTime;
 
-        if (timer <= 0)
+        if (FBtimer <= 0)
         {
-            Flashback.SetActive(false);
+            FlashbackImage.SetActive(false);
             
 
         }

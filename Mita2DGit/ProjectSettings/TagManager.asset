@@ -9,6 +9,14 @@ TagManager:
   - Case1
   - Case2
   - Case3
+  - FBNeckLace
+  - FBMinnie
+  - FBPaint
+  - FBDip
+  - FBWheelChair
+  - Pill3
+  - Pill4
+  - Pill5
   layers:
   - Default
   - TransparentFX

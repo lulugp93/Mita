@@ -17,6 +17,8 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject LittleHallucnation1;
     public GameObject Distortion1;
     public GameObject Distortion2;
+    public GameObject PaintingButton;
+    public GameObject WheelieButton;
     private bool Played;
     public AudioSource myFx;
     public AudioClip Foots;
@@ -86,6 +88,14 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
+        if(DayCounter.DayPoints>59 && DayCounter.Paint == false)
+        {
+            PaintingButton.SetActive(true);
+        }
+        if (DayCounter.DayPoints > 20 && DayCounter.Wheelchair == false)
+        {
+            WheelieButton.SetActive(true);
+        }
         pointerDown = false;
         pointerDownTimer = 0f;
         requiredHoldTime = 3.7f;
@@ -161,7 +171,7 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Reset()
     {
-        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41)
+        if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41 || DayCounter.DayPoints == 60 || DayCounter.DayPoints == 80)
         {
             pointerDown = false;
             // myAnimationController.SetBool("MoveRoom", false);

@@ -35,6 +35,31 @@ public class NewMazeGoal : MonoBehaviour
             DigestParticle.Play();
             Destroy(col.gameObject);
         }
+
+        if (col.gameObject.tag == "Pill3")
+        {
+            PillPoint += 1;
+            //Debug.Log(PillPoint);
+            Debug.Log("youve entered the stomach");
+            DigestParticle.Play();
+            Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Pill4")
+        {
+            PillPoint += 1;
+            //Debug.Log(PillPoint);
+            Debug.Log("youve entered the stomach");
+            DigestParticle.Play();
+            Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Pill5")
+        {
+            PillPoint += 1;
+            //Debug.Log(PillPoint);
+            Debug.Log("youve entered the stomach");
+            DigestParticle.Play();
+            Destroy(col.gameObject);
+        }
     }
 
     /*
@@ -52,9 +77,9 @@ public class NewMazeGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PillPoint == 2)
+        if(PillPoint == 5)
         {
-            // Debug.Log("you did it!");
+             Debug.Log("you did it!");
             // SceneManager.LoadScene("MitaWakePOV");
             IsWin = true;
         }

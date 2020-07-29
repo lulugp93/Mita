@@ -12,6 +12,12 @@ public class SppechWin : MonoBehaviour
     public GameObject piece4;
     public GameObject piece5;
     public GameObject piece6;
+    public GameObject CT1piece1;
+    public GameObject CT1piece2;
+    public GameObject CT1piece3;
+    public GameObject CT1piece4;
+    public GameObject CT1piece5;
+    public GameObject CT1piece6;
     public GameObject CT1Figure;
     public GameObject CT2Figure;
     public static int SpeechPoints;

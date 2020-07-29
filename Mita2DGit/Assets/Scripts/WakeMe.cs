@@ -21,6 +21,7 @@ public class WakeMe : MonoBehaviour
     public AudioClip Rustle;
     public static bool IsWin = false;
     public Animator myAnimationController;
+    public GameObject MinnieButton;
 
     public void Sleepyhead()
     {
@@ -105,8 +106,12 @@ public class WakeMe : MonoBehaviour
 
     public void Start()
     {
+        if (DayCounter.DayPoints > 30 && DayCounter.Minnie == false)
+        {
+            MinnieButton.SetActive(true);
+        }
         CreditsTimer = 0f;
-        EndTime = 0.26f;
+        EndTime = 0.4f;
         if (DayCounter.DayPoints == 98)
         {
             Pose2.SetActive(true);

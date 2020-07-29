@@ -10,6 +10,7 @@ public class Stereo : MonoBehaviour
     public GameObject NeutralFace;
     public GameObject UhOhFace;
     public GameObject HappyFace;
+    public GameObject DiploButton;
     public AudioSource myFx;
     public AudioClip Song1;
     public AudioClip Song2;
@@ -81,6 +82,10 @@ public class Stereo : MonoBehaviour
     }
     void Start()
     {
+        if(DayCounter.DayPoints>91 && DayCounter.Diploma == false)
+        {
+            DiploButton.SetActive(true);
+        }
         Disc1.SetActive(false);
         Disc2.SetActive(false);
         Disc3.SetActive(false);

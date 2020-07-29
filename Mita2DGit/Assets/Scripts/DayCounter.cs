@@ -5,7 +5,11 @@ using UnityEngine;
 public class DayCounter : MonoBehaviour
 {
     public static int DayPoints;
-
+    public static bool Necklace;
+    public static bool Minnie;
+    public static bool Paint;
+    public static bool Diploma;
+    public static bool Wheelchair;
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
