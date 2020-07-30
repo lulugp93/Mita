@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        DayCounter.DayPoints = 0;
         IsPause = false;
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;

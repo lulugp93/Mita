@@ -1112,6 +1112,36 @@ MonoBehaviour:
   FaceScribbleStill: {fileID: 0}
   FaceScribbleWalk: {fileID: 0}
   myAnimationController: {fileID: 0}
+--- !u!1 &783193502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783193503}
+  m_Layer: 0
+  m_Name: Empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783193503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783193502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3270206, y: 0.16651963, z: 48.839844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803381054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,18 +2382,18 @@ MonoBehaviour:
   HandnotHeld: {fileID: 1014233477}
   CT2Hold: {fileID: 542558361}
   CT2NotHold: {fileID: 66958302}
-  LittleHallucnation1: {fileID: 0}
-  Distortion1: {fileID: 0}
-  Distortion2: {fileID: 0}
-  PaintingButton: {fileID: 0}
+  LittleHallucnation1: {fileID: 783193502}
+  Distortion1: {fileID: 783193502}
+  Distortion2: {fileID: 783193502}
+  PaintingButton: {fileID: 783193502}
   WheelieButton: {fileID: 753748826}
   myFx: {fileID: 1714212652}
   Foots: {fileID: 8300000, guid: e591533c310cbbe48a281aa4fe7a9ddd, type: 3}
   HandButton: {fileID: 1714212645}
   BooBoo: {fileID: 1543457959}
   NotHoldBooBoo: {fileID: 1197106651}
-  FaceScribbleStill: {fileID: 0}
-  FaceScribbleWalk: {fileID: 0}
+  FaceScribbleStill: {fileID: 783193502}
+  FaceScribbleWalk: {fileID: 783193502}
   myAnimationController: {fileID: 774919047}
 --- !u!114 &1714212651
 MonoBehaviour:

@@ -290,6 +290,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &329332221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329332222}
+  m_Layer: 0
+  m_Name: empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329332222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329332221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3270206, y: 0.16651963, z: 48.839844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530535598
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +550,7 @@ MonoBehaviour:
   Pose1: {fileID: 530535598}
   Pose2: {fileID: 2072226098}
   Pose3: {fileID: 85055974}
-  EndTime: 0
+  EndTime: 0.04
   myFx: {fileID: 606963305}
   Rustle: {fileID: 8300000, guid: 4dc55b902a96f5d4f94cd629076d98a1, type: 3}
   myAnimationController: {fileID: 2052604103}
@@ -732,8 +762,8 @@ MonoBehaviour:
   EndTime: 0
   myFx: {fileID: 0}
   Rustle: {fileID: 0}
-  myAnimationController: {fileID: 0}
-  MinnieButton: {fileID: 0}
+  myAnimationController: {fileID: 2077623701}
+  MinnieButton: {fileID: 1277475687}
 --- !u!114 &746122238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,6 +2596,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a3636ab947fcf46a73c5f7d6bfc796, type: 3}
+--- !u!95 &2077623701 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4756677500683797536, guid: 65a3636ab947fcf46a73c5f7d6bfc796,
+    type: 3}
+  m_PrefabInstance: {fileID: 2077623700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6993406832904355629
 PrefabInstance:
   m_ObjectHideFlags: 0

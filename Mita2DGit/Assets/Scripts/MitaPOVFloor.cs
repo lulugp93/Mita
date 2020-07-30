@@ -14,7 +14,7 @@ public class MitaPOVFloor : MonoBehaviour
 
         //if(DayCounter.DayPoints == 26)
        // {
-            FloorTimer = 6f;
+            FloorTimer = 4f;
        // }
         //if(DayCounter.DayPoints == 74)
        // {

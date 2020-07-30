@@ -106,12 +106,15 @@ public class WakeMe : MonoBehaviour
 
     public void Start()
     {
+        CreditsTimer = 0f;
+        EndTime = 0.4f;
+        Clicks = 0;
+
         if (DayCounter.DayPoints > 30 && DayCounter.Minnie == false)
         {
             MinnieButton.SetActive(true);
         }
-        CreditsTimer = 0f;
-        EndTime = 0.4f;
+      
         if (DayCounter.DayPoints == 98)
         {
             Pose2.SetActive(true);
@@ -141,7 +144,8 @@ public class WakeMe : MonoBehaviour
         }
         if (DayCounter.DayPoints == 20 || DayCounter.DayPoints == 68)
         {
-            NeededClicks = 10;
+            IsWin = false;
+            NeededClicks = 1000;
             Pose1.SetActive(false);
             TapZone.SetActive(false);
             FloorButton.SetActive(true);
@@ -167,6 +171,7 @@ public class WakeMe : MonoBehaviour
         if (CreditsTimer >= EndTime)
         {
             Debug.Log("You should transition now");
+            DayCounter.DayPoints = 0;
             SceneManager.LoadScene("Credits");
         }
 

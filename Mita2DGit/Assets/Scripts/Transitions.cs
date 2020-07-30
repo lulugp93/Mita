@@ -176,6 +176,22 @@ public class Transitions : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 SceneManager.LoadScene("MitaFloorPOV");
             }
+            else if (DayCounter.DayPoints == 96)
+            {
+                AlarmSwipe.IsWin = false;
+                WakeMe.IsWin = false;
+                HandHolder.IsWin = false;
+                CupSetter.IsWin = false;
+                SppechWin.IsWin = false;
+                Stereo.IsWin = false;
+                MitaPOVwake.IsWin = false;
+                HandWasher.IsWin = false;
+                NewMazeGoal.IsWin = false;
+                MitaPOVFloor.IsWin = false;
+                TransitionAnim.SetTrigger("end");
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("GoldenDream");
+            }
             else
             {
                 AlarmSwipe.IsWin = false;

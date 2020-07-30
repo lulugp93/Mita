@@ -88,26 +88,34 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
-        if(DayCounter.DayPoints>59 && DayCounter.Paint == false)
-        {
-            PaintingButton.SetActive(true);
-        }
-        if (DayCounter.DayPoints > 20 && DayCounter.Wheelchair == false)
-        {
-            WheelieButton.SetActive(true);
-        }
         pointerDown = false;
         pointerDownTimer = 0f;
         requiredHoldTime = 3.7f;
         myAnimationController.enabled = false;
+        Reset();
+
+        if (DayCounter.DayPoints>59 && DayCounter.Paint == false)
+        {
+            PaintingButton.SetActive(true);
+        }
+
+        if (DayCounter.DayPoints > 20 && DayCounter.Wheelchair == false)
+        {
+            WheelieButton.SetActive(true);
+        }
+
+       
+
         if(DayCounter.DayPoints == 2 || DayCounter.DayPoints == 21 || DayCounter.DayPoints == 32 || DayCounter.DayPoints == 50 || DayCounter.DayPoints == 69 || DayCounter.DayPoints == 89)
         {
             HandnotHeld.SetActive(true);
         }
+
         if (DayCounter.DayPoints == 12 || DayCounter.DayPoints == 41 || DayCounter.DayPoints == 60 || DayCounter.DayPoints == 80)
         {
             CT2NotHold.SetActive(true);
         }
+
         if (DayCounter.DayPoints == 16)
         {
             LittleHallucnation1.SetActive(true);
@@ -123,10 +131,12 @@ public class HandHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             FaceScribbleStill.SetActive(true);
             FaceScribbleWalk.SetActive(true);
         }
+
         if(DayCounter.DayPoints == 75 || DayCounter.DayPoints == 84)
         {
             Distortion1.SetActive(true);
         }
+
         if(DayCounter.DayPoints == 94)
         {
             Distortion2.SetActive(true);

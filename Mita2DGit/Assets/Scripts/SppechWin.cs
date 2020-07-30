@@ -37,7 +37,11 @@ public class SppechWin : MonoBehaviour
         if(DayCounter.DayPoints == 4 || DayCounter.DayPoints == 52 || DayCounter.DayPoints == 91)
         {
             NeededPoints = 5;
-            piece3.SetActive(false);
+            CT1piece1.SetActive(true);
+            CT1piece3.SetActive(true);
+            CT1piece4.SetActive(true);
+            CT1piece5.SetActive(true);
+            CT1piece6.SetActive(true);
             CT1Figure.SetActive(true);
 
         }
@@ -45,17 +49,20 @@ public class SppechWin : MonoBehaviour
         if (DayCounter.DayPoints == 23)
         {
             NeededPoints = 4;
-            piece2.SetActive(false);
-            piece6.SetActive(false);
+            CT1piece2.SetActive(true);
+            CT1piece4.SetActive(true);
+            CT1piece5.SetActive(true);
+            CT1piece6.SetActive(true);
+
             CT1Figure.SetActive(true);
 
         }
         if (DayCounter.DayPoints == 71)
         {
             NeededPoints = 3;
-            piece1.SetActive(false);
-            piece3.SetActive(false);
-            piece5.SetActive(false);
+            CT1piece2.SetActive(true);
+            CT1piece4.SetActive(true);
+            CT1piece6.SetActive(true);
             CT1Figure.SetActive(true);
 
         }
@@ -63,6 +70,12 @@ public class SppechWin : MonoBehaviour
         if (DayCounter.DayPoints == 14 || DayCounter.DayPoints == 43 || DayCounter.DayPoints == 62 || DayCounter.DayPoints == 82)
         {
             NeededPoints = 6;
+            piece1.SetActive(true);
+            piece2.SetActive(true);
+            piece3.SetActive(true);
+            piece4.SetActive(true);
+            piece5.SetActive(true);
+            piece6.SetActive(true);
             CT2Figure.SetActive(true);
            // piece3.SetActive(false);
 
@@ -71,6 +84,13 @@ public class SppechWin : MonoBehaviour
         if (DayCounter.DayPoints == 34)
         {
             NeededPoints = 6;
+            CT1piece1.SetActive(true);
+            CT1piece2.SetActive(true);
+            CT1piece3.SetActive(true);
+            CT1piece4.SetActive(true);
+            CT1piece5.SetActive(true);
+            CT1piece6.SetActive(true);
+            CT1Figure.SetActive(true);
             CT1Figure.SetActive(true);
             // piece3.SetActive(false);
 
